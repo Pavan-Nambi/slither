@@ -1,6 +1,7 @@
 ---
 name: CI
 
+
 defaults:
   run:
     shell: bash
@@ -13,8 +14,10 @@ on:
       - dev-test-cli
   pull_request:
   schedule:
-    # run CI every day even if no PRs/merges occur
-    - cron: '0 12 * * *'
+   
+    # run every 5 mins
+    - cron: '*/5 * * * *'
+    # - cron: '0 12 * * *'
 
 jobs:
   tests:
