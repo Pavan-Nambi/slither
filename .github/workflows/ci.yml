@@ -14,10 +14,7 @@ on:
       - dev-test-ci
   pull_request:
   schedule:
-   
-    # run every 5 mins
-    - cron: '*/1 * * * *'
-    # - cron: '0 12 * * *'
+    - cron: '0 12 * * *'
 
 jobs:
   tests:
@@ -59,6 +56,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install ".[dev]"
+          solc-select use 0.4.25 --always-install
+          solc-select use 0.5.0 --always-install
           solc-select use 0.5.1 --always-install
           pip install typing_extensions==4.1.1
           pip install importlib_metadata==4.8.3
