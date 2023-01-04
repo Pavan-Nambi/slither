@@ -11,12 +11,12 @@ on:
     branches:
       - master
       - dev
-      - dev-test-cli
+      - dev-test-ci
   pull_request:
   schedule:
    
     # run every 5 mins
-    - cron: '*/5 * * * *'
+    - cron: '*/1 * * * *'
     # - cron: '0 12 * * *'
 
 jobs:
